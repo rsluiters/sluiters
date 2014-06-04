@@ -10,6 +10,7 @@ class TenantsController < ApplicationController
   # GET /tenants/1
   # GET /tenants/1.json
   def show
+    render "pages/#{@tenant.subfolder}/index"
   end
 
   # GET /tenants/new
@@ -20,6 +21,7 @@ class TenantsController < ApplicationController
   # GET /tenants/1/edit
   def edit
   end
+
 
   # POST /tenants
   # POST /tenants.json
