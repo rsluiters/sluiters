@@ -1,0 +1,23 @@
+Subfolder
+%h1 Listing tenants
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th ID
+      %th Name
+      %th Subfolder
+      %th{colspan: "3"}
+
+  %tbody
+    - @tenants.each do |tenant|
+      %tr
+        %td= tenant.id
+        %td= tenant.name
+        %td= tenant.subfolder
+        %td= link_to 'Show', tenant
+        %td= link_to 'Edit', edit_tenant_path(tenant)
+        %td= link_to 'Destroy', tenant, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+= link_to 'New Tenant', new_tenant_path
