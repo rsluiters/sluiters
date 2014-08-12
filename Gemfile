@@ -7,6 +7,7 @@ gem 'rails', '4.1.4'
 gem 'pg'
 
 gem 'haml'
+gem 'haml-rails' # For auto-scaffolding
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sass-rails', '~> 4.0.3'

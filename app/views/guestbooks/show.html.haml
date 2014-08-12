@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Tenant:
+  = @guestbook.tenant_id
+%p
+  %b Title:
+  = @guestbook.title
+%p
+  %b Content:
+  = @guestbook.content
+%p
+  %b Status:
+  = @guestbook.status
+%p
+  %b Originator email:
+  = @guestbook.originator_email
+%p
+  %b Originator name:
+  = @guestbook.originator_name
+
+= link_to 'Edit', edit_guestbook_path(@guestbook)
+\|
+= link_to 'Back', guestbooks_path

@@ -1,0 +1,29 @@
+%h1 Listing guestbooks
+
+%table
+  %tr
+    %th Tenant
+    %th Title
+    %th Content
+    %th Status
+    %th Originator email
+    %th Originator name
+    %th
+    %th
+    %th
+
+  - @guestbooks.each do |guestbook|
+    %tr
+      %td= guestbook.tenant_id
+      %td= guestbook.title
+      %td= guestbook.content
+      %td= guestbook.status
+      %td= guestbook.originator_email
+      %td= guestbook.originator_name
+      %td= link_to 'Show', guestbook
+      %td= link_to 'Edit', edit_guestbook_path(guestbook)
+      %td= link_to 'Destroy', guestbook, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Guestbook', new_guestbook_path
