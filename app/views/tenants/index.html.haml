@@ -7,7 +7,7 @@ Subfolder
       %th ID
       %th Name
       %th Subfolder
-      %th{colspan: "3"}
+      %th
 
   %tbody
     - @tenants.each do |tenant|
@@ -15,9 +15,16 @@ Subfolder
         %td= tenant.id
         %td= tenant.name
         %td= tenant.subfolder
-        %td= link_to 'Show', tenant
-        %td= link_to 'Edit', edit_tenant_path(tenant)
-        %td= link_to 'Destroy', tenant, method: :delete, data: { confirm: 'Are you sure?' }
+        %td
+          = link_to tenant do
+            %i.fa.fa-eye{title: 'Show'}
+          = link_to edit_tenant_path(tenant) do
+            %i.fa.fa-pencil{title: 'Edit'}
+          = link_to tenant, method: :delete, data: { confirm: 'Are you sure?' } do
+            %i.fa.fa-trash-o{title: 'Destroy'}
 
 %br
-= link_to 'New Tenant', new_tenant_path
+= link_to new_tenant_path do
+  .btn
+    %i.fa.fa-plus
+    New tenant
