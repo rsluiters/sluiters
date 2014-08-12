@@ -1,0 +1,9 @@
+Bitte bestätige deinen Eintrag ins Gästebuch mit folgendem Link:
+
+http://www.sluiters.de/guestbooks/<%= @guestbook_item.id %>/confirm?token=<%= @guestbook_item.verification_token %>
+
+
+Der Eintrag von <%= @guestbook_item.created_at %> lautet:
+<%= @guestbook_item.title %>
+
+<%= @guestbook_item.content %>
