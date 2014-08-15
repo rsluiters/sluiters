@@ -59,6 +59,14 @@ class GuestbooksController < ApplicationController
     end
   end
 
+  def confirm
+    token = params[:token]
+    @item=Guestbook.find_by_id(params[:guestbook_id])
+    if @item && @item.created?
+      @item.update_attributes!(status: :verified) if @item.verification_token == token
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_guestbook

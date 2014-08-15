@@ -1,0 +1,11 @@
+%h1 Gästebucheintrag: E-Mail Bestätigung
+
+%p
+  - if @item
+    Ihre E-Mailadresse wurde erfolgreich bestätigt. Ihr Gästebucheintrag wird nun geprüft und in Kürze erscheinen:
+
+    %p
+      %b= @item.title
+      %p= @item.content
+  - else
+    Eintrag wurde nicht gefunden.
